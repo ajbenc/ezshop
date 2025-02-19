@@ -1,0 +1,658 @@
+// HomePage.scss
+.home-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  background: linear-gradient(135deg, #eff6ff, #dbeafe);
+
+  &__title {
+    text-align: center;
+    color: #2b3445;
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin: 3rem 0 1rem;
+    padding: 0 1rem;
+    letter-spacing: -0.5px;
+
+    @media (max-width: 768px) {
+      font-size: 2.5rem;
+      margin: 2rem 0 0.75rem;
+    }
+
+    // Add a subtle animation on page load
+    animation: fadeInDown 0.8s ease-out;
+  }
+
+  &__subtitle {
+    text-align: center;
+    color: #6c757d;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 3rem;
+    padding: 0 1rem;
+
+    @media (max-width: 768px) {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    // Slightly delayed animation for the subtitle
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+  }
+}
+
+// Keyframes for the animations
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Carousel Section
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(37, 99, 235, 0.1);
+  margin-bottom: 3rem;
+  background: linear-gradient(135deg, #eff6ff, #dbeafe);
+  display: flex;
+
+  .carousel-header {
+    font-size: 2.5rem;
+    text-align: center;
+    color: #2563eb;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 4px rgba(37, 99, 235, 0.1);
+  }
+
+  .carousel-sub {
+    font-size: 1.25rem;
+    text-align: center;
+    color: #3b82f6;
+    padding: 1rem;
+    font-weight: 500;
+  }
+
+  &-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+    background: rgb(255, 255, 255);
+    backdrop-filter: blur(10px);
+
+    &:first-child {
+      opacity: 1;
+    }
+  }
+
+  &-image-container {
+    flex: 0 0 40%;
+    height: 100%;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white; // White background for image section
+    border-right: 1px solid rgba(37, 99, 235, 0.1); // Subtle separator
+  }
+
+  &-image {
+    max-width: 100%;
+    max-height: 280px;
+    object-fit: contain;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: drop-shadow(0 4px 6px rgba(37, 99, 235, 0.1));
+
+    &:hover {
+      transform: scale(1.05) translateY(-5px);
+    }
+  }
+
+  &-content {
+    flex: 0 0 60%;
+    padding: 3rem;
+    color: white;
+    background: linear-gradient(135deg, #2563eb, #60a5fa);
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      font-weight: 800;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  &-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #1e40af;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  &-price {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 1px 2px rgba(253, 253, 255, 0.1);
+  }
+
+  &-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #ffffff, #fdfdfd);
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    box-shadow: 0 4px 6px rgba(37, 99, 235, 0.1);
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 15px rgba(37, 99, 235, 0.2);
+      background: linear-gradient(135deg, #1d4ed8, #1e40af);
+    }
+  }
+}
+
+// Exclusive Offer Section
+.exclusive-offer {
+  display: flex;
+  align-items: center;
+
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 3rem;
+  box-shadow: 0 12px 24px rgba(37, 99, 235, 0.15);
+
+  &__image {
+    flex: 0 0 40%;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    backdrop-filter: blur(10px);
+
+    img {
+      max-width: 100%;
+      max-height: 300px;
+      object-fit: contain;
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      filter: drop-shadow(0 4px 6px rgba(37, 99, 235, 0.1));
+
+      &:hover {
+        transform: scale(1.05) translateY(-5px);
+      }
+    }
+  }
+
+  &__content {
+    flex: 0 0 60%;
+    padding: 3rem;
+    color: white;
+    background: linear-gradient(135deg, #2563eb, #60a5fa);
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      font-weight: 800;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      opacity: 0.9;
+      line-height: 1.6;
+    }
+  }
+
+  &__price {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 1.5rem 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  &__button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: white;
+    color: #2563eb;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+      background: #f8fafc;
+    }
+  }
+}
+
+// Categories Section
+.categories {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  padding: 2rem 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+  }
+}
+
+.category-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(37, 99, 235, 0.1);
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(37, 99, 235, 0.15);
+
+    .category-overlay {
+      background: linear-gradient(
+        to top,
+        rgba(37, 99, 235, 0.8),
+        rgba(37, 99, 235, 0.2)
+      );
+    }
+
+    .category-title {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+.category-image-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+
+  @media (max-width: 768px) {
+    height: 200px;
+  }
+}
+
+.category-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.category-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to top,
+    rgba(37, 99, 235, 0.6),
+    rgba(37, 99, 235, 0.1)
+  );
+  transition: all 0.4s ease;
+}
+
+.category-title {
+  position: absolute;
+  text-align: left;
+  bottom: 25px;
+  left: 25px;
+  color: white;
+  padding: 1.25rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  opacity: 0.95;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(5px);
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+    bottom: 15px;
+    left: 15px;
+  }
+}
+
+// Testimonials Section
+
+// Store Reviews Section
+.store-reviews {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+
+  &__title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #2d3748;
+    margin-bottom: 3rem;
+    font-weight: 600;
+    position: relative;
+    width: 100%;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background-color: #3366ff;
+      border-radius: 2px;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
+  }
+}
+
+// Common styles for review cards
+%review-card {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+  width: 300px;  
+  min-height: 80px;  
+
+  &::before {
+    content: '"';
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    font-size: 3rem;
+    color: rgba(51, 102, 255, 0.1);
+    font-family: Georgia, serif;
+    line-height: 1;
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  @media (max-width: 968px) {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+// Individual review sections
+.store-review {
+  &__one,
+  &__two,
+  &__three {
+    @extend %review-card;
+  }
+}
+
+// Review titles
+.review-one,
+.review-two,
+.review-three {
+  font-size: 1.125rem;   
+  color: #2d3748;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+  font-weight: 500;
+  padding-left: 0.75rem;
+  border-left: 3px solid #3366ff;
+}
+
+// Review author text
+.review-one-text,
+.review-two-text,
+.review-three-text {
+  color: #718096;
+  font-style: italic;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem; // Smaller font size
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 2px;
+    background-color: #3366ff;
+    opacity: 0.5;
+  }
+}
+
+// Animation for cards
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Apply animations to cards
+.store-review__one {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.store-review__two {
+  animation: fadeInUp 0.6s ease-out 0.2s;
+  animation-fill-mode: both;
+}
+
+.store-review__three {
+  animation: fadeInUp 0.6s ease-out 0.4s;
+  animation-fill-mode: both;
+}
+ 
+//footer section
+
+.site-footer {
+  background-color: #f8f9fa;
+  padding: 4rem 0 2rem;
+  margin-top: 4rem;
+  border-top: 1px solid #e9ecef;
+
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+
+  .footer-section {
+    .footer-title {
+      color: #2b3445;
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -0.5rem;
+        width: 40px;
+        height: 2px;
+        background-color: #3461ff;
+      }
+    }
+
+    .footer-contact {
+      p {
+        color: #6c757d;
+        margin-bottom: 0.5rem;
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        margin-bottom: 0.75rem;
+
+        a {
+          color: #6c757d;
+          text-decoration: none;
+          font-size: 0.95rem;
+          transition: color 0.2s ease;
+
+          &:hover {
+            color: #3461ff;
+          }
+        }
+      }
+    }
+
+    .payment-methods {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+
+      .payment-icon {
+        background-color: #fff;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        font-size: 0.9rem;
+        color: #495057;
+        border: 1px solid #dee2e6;
+        transition: all 0.2s ease;
+
+        &:hover {
+          border-color: #3461ff;
+          color: #3461ff;
+        }
+      }
+    }
+  }
+
+  .footer-bottom {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #dee2e6;
+
+    p {
+      color: #6c757d;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+// Dark mode support
+@media (prefers-color-scheme: dark) {
+  .carousel {
+    &-image-container {
+      background: white; // Keep white background for images in dark mode
+    }
+
+    &-content {
+      background: linear-gradient(135deg, #1e40af, #1d4ed8);
+    }
+
+    .carousel-header {
+      color: #60a5fa;
+    }
+
+    .carousel-sub {
+      color: #93c5fd;
+    }
+
+    &-title {
+      color: #e5e7eb;
+    }
+
+    &-price {
+      color: #60a5fa;
+    }
+
+    &-button {
+      background: linear-gradient(135deg, #60a5fa, #3b82f6);
+
+      &:hover {
+        background: linear-gradient(135deg, #3b82f6, #2563eb);
+      }
+    }
+  }
+
+  .exclusive-offer {
+    &__image {
+      background: white; // Keep white background for images in dark mode
+    }
+
+    &__content {
+      background: linear-gradient(135deg, #1e40af, #2563eb);
+    }
+  }
+}
