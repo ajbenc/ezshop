@@ -19,7 +19,7 @@
     text-decoration: none;
     letter-spacing: -0.5px;
     transition: all 0.3s ease;
-    
+
     &:hover {
       color: #1d4ed8;
       transform: scale(1.05);
@@ -41,7 +41,7 @@
       border-radius: 8px;
       font-size: 0.95rem;
       transition: all 0.3s ease;
-      
+
       &:focus {
         outline: none;
         border-color: #2563eb;
@@ -60,7 +60,7 @@
       cursor: pointer;
       transition: all 0.3s ease;
       white-space: nowrap;
-      
+
       &:hover {
         background: #1d4ed8;
         transform: translateY(-2px);
@@ -91,7 +91,7 @@
       display: flex;
       align-items: center;
       gap: 0.25rem;
-      
+
       &:hover {
         color: #2563eb;
       }
@@ -141,7 +141,7 @@
       font-weight: 500;
       cursor: pointer;
       transition: all 0.3s ease;
-      
+
       &:hover {
         background: #dc2626;
         transform: translateY(-2px);
@@ -155,7 +155,7 @@
   .navbar {
     flex-wrap: wrap;
     padding: 0.75rem 1rem;
-    
+
     &__logo {
       flex: 0 1 auto;
       font-size: 1.5rem;
@@ -187,7 +187,7 @@
 
       .cart-icon {
         font-size: 1.2rem;
-        
+
         .cart-badge {
           font-size: 0.7rem;
           min-width: 16px;
@@ -207,7 +207,7 @@
       flex-wrap: wrap;
       justify-content: flex-end;
       gap: 0.5rem;
-      
+
       li {
         width: auto;
       }
@@ -246,7 +246,7 @@
     &__search {
       margin: 0.25rem 0;
       gap: 0.35rem;
-      
+
       input {
         padding: 0.35rem 0.5rem;
         font-size: 0.85rem;
@@ -260,7 +260,7 @@
 
     &__links {
       gap: 0.35rem;
-      
+
       a {
         font-size: 0.85rem;
         padding: 0.25rem 0.35rem;
@@ -282,10 +282,10 @@
 @media (prefers-color-scheme: dark) {
   .navbar {
     background: rgba(17, 24, 39, 0.95);
-    
+
     &__logo {
       color: #60a5fa;
-      
+
       &:hover {
         color: #93c5fd;
       }
@@ -296,7 +296,7 @@
         background: #1f2937;
         border-color: #374151;
         color: white;
-        
+
         &:focus {
           border-color: #60a5fa;
         }
@@ -306,7 +306,7 @@
     &__links {
       a {
         color: #d1d5db;
-        
+
         &:hover {
           color: #60a5fa;
         }
