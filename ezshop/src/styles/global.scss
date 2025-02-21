@@ -2,9 +2,6 @@
    Global Styles
    ============================================================================== */
 
-/* ------------------------------------------------------------------------------
-   Base Reset & Box Sizing
-   ------------------------------------------------------------------------------ */
    *,
    *::before,
    *::after {
@@ -134,14 +131,12 @@
      }
    }
    
-   /* Animation Utility Class */
+
    .fade-in {
      animation: fadeIn 0.6s ease-in-out forwards;
    }
    
-   /* ------------------------------------------------------------------------------
-      Responsive Mixin for Easy Breakpoints
-      ------------------------------------------------------------------------------ */
+   
    @mixin respond-to($breakpoint) {
      @if $breakpoint == small {
        @media (max-width: 600px) { @content; }
@@ -154,7 +149,7 @@
      }
    }
    
-   /* Example: Adjust container padding on small screens */
+
    .container {
      @include respond-to(small) {
        padding: 1rem 0;
