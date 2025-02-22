@@ -31,7 +31,7 @@ app.use('/api/users', userRoutes);
 app.use('/api/cart', cartRoutes); 
 
 const corsOptions = {
-  origin: ['https://your-frontend-domain.com'],
+  origin: ['https://ezshop.pages.dev'],
   optionsSuccessStatus: 200
 };
 app.use(cors(corsOptions));
