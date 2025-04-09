@@ -10,6 +10,11 @@ dotenv.config();
 // Initialize Express app
 const app = express();
 
+// Add a health check route
+app.get('/', (req, res) => {
+  res.send("Backend server is live");
+});
+
 // Middleware
 app.use(cors());
 app.use(express.json());
