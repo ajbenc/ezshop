@@ -1,1 +1,22 @@
 .qodo
+
+# Node modules
+node_modules/
+
+# Environment variables file (do not commit this file)
+.env
+
+# Logs
+logs
+*.log
+
+# Dependency directories
+jspm_packages/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Build output
+dist/
+build/
